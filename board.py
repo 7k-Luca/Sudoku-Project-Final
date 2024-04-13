@@ -1,3 +1,5 @@
+import pygame, sys
+
 class Board:
     def __init__(self, width, height, screen, difficulty):
         self.width = width
@@ -34,6 +36,6 @@ class Board:
 
     def find_empty(self):
         pass
-    
+
     def check_board(self):
         pass
