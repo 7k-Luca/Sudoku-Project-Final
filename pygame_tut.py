@@ -14,17 +14,22 @@ menu_state = "main"
 font = pg.font.SysFont("arialblack", 20)
 text_color = (255, 255, 255) # define colours
 
+# load title image
+#title_img = pg.image.load("images/button_title.png").convert_alpha()
+
 # load button images
 resume_img = pg.image.load("images/button_resume.png").convert_alpha()
 options_img = pg.image.load("images/button_options.png").convert_alpha()
 quit_img = pg.image.load("images/button_quit.png").convert_alpha()
 back_img = pg.image.load("images/button_back.png").convert_alpha()
 
+
 # create button instances
 resume_button = pygame_tut_button.Button(150, 125, resume_img, 1)
 options_button = pygame_tut_button.Button(145, 250, options_img, 1)
 quit_button = pygame_tut_button.Button(180, 375, quit_img, 1)
 back_button = pygame_tut_button.Button(145, 250, back_img, 1)
+
 
 
 def draw_text(text, font, text_col, x, y):
@@ -51,7 +56,8 @@ def game_loop():
             if back_button.draw(screen):
                 menu_state = "main"
     else:
-        draw_text("Press SPACE to pause", font, text_color, 150, 250)
+        #title_img.draw()
+        draw_text("Press SPACE to Play", font, text_color, 140, 350)
 
 
     for event in pg.event.get():
