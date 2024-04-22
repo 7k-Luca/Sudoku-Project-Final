@@ -1,5 +1,6 @@
 
 import math
+import random
 """
 This was adapted from a GeeksforGeeks article "Program for Sudoku Generator" by Aarti_Rathi and Ankur Trisal
 https://www.geeksforgeeks.org/program-sudoku-generator/
@@ -131,7 +132,7 @@ class SudokuGenerator:
         for i in range(row_start, row_start + 3):
             for j in range(col_start, col_start + 3):
                 if self.board[i][j] == 0:
-                    self.board[i][j] = math.random.randint(1, 9) # Review what value threshold should be for this
+                    self.board[i][j] = random.randint(1, 9) # Review what value threshold should be for this
 
     '''
     Fills the three boxes along the main diagonal of the board
@@ -143,7 +144,7 @@ class SudokuGenerator:
     def fill_diagonal(self):
         for i in range(0, self.row_length, 3):
             box_nums = list(range(1, self.row_length + 1))
-            math.random.shuffle(box_nums)
+            random.shuffle(box_nums)
 
             for row in range(i, i + 3):
                 for col in range(i, i + 3):
@@ -215,8 +216,8 @@ class SudokuGenerator:
     def remove_cells(self):
         cells_to_remove = self.removed_cells
         while cells_to_remove > 0:
-            row = math.random.randint(0, self.row_length-1)
-            col = math.random.randint(0, self.row_length-1)
+            row = random.randint(0, self.row_length-1)
+            col = random.randint(0, self.row_length-1)
             if self.board[row][col] != 0:
                 self.board[row][col] = 0
                 cells_to_remove -= 1
