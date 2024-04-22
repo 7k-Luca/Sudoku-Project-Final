@@ -1,4 +1,5 @@
 from cell import Cell
+import sys, pygame as pg
 
 class Board:
     def __init__(self, width, height, screen, difficulty):
