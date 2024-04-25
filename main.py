@@ -28,7 +28,7 @@ if __name__ == '__main__':
     text_f = pygame.font.Font(None, 70)
     option_font = pygame.font.Font(None, 35)
     icon = pygame.image.load(
-        'image.png').convert()  # image comes from https://www.lite.games/sudoku-now-as-good-as-new-update/
+        'image.png').convert()
     screen.blit(icon, (0, 0))
     board = None
     random.seed(random.randint(0, 100000000))
