@@ -34,13 +34,13 @@ if __name__ == '__main__':
     random.seed(random.randint(0, 100000000))
 
 
-    def draw_rect(pos, color='red', width=0):
+    def draw_rect(pos, color='Grey', width=0):
         pygame.draw.rect(screen, color, pos, width)
 
         return pygame.Rect(pos)
 
 
-    def write_text(text, pos, color='red', text_font=text_f):
+    def write_text(text, pos, color='Grey', text_font=text_f):
         text_surf = text_font.render(text, 0, color)
         text_rect = text_surf.get_rect(center=pos)
         screen.blit(text_surf, text_rect)
@@ -49,8 +49,8 @@ if __name__ == '__main__':
     def draw_starting_screen():
         icon = pygame.image.load('image.png').convert()
         screen.blit(icon, (0, 0))
-        draw_rect((50, (height // 2 - 225), 500, 50), 'black')
-        draw_rect((50, (height // 2 - 125), 500, 50), 'black')
+        draw_rect((50, (height // 2 - 225), 540, 50), 'black')
+        draw_rect((50, (height // 2 - 125), 540, 50), 'black')
         write_text('Welcome To Sudoku', (width // 2, height // 2 - 200))
         write_text('Select Game Mode', (width // 2, height // 2 - 100))
         rect_easy = draw_rect((rect_x, rect_y + 50, rect_width, rect_height))
@@ -65,7 +65,7 @@ if __name__ == '__main__':
     def draw_ending_screen_win():
         icon = pygame.image.load('image.png').convert()
         screen.blit(icon, (0, 0))
-        draw_rect(((width // 2 - 57.5), (height // 2 - 225), rect_width, 50), 'red')
+        draw_rect(((width // 2 - 57.5), (height // 2 - 225), rect_width, 50), 'Grey')
         write_text('You Won!', (width // 2, height // 2 - 200), 'black', text_font=option_font)
         rect = draw_rect((width // 2 - 50, height // 2, rect_width, rect_height))
         write_text('Exit', (width // 2 + 10, height // 2 + 25), 'black', text_font=option_font)
@@ -75,7 +75,7 @@ if __name__ == '__main__':
     def draw_ending_screen_loose():
         icon = pygame.image.load('image.png').convert()
         screen.blit(icon, (0, 0))
-        draw_rect(((width // 2 - 57.5), (height // 2 - 225), rect_width, 50), 'red')
+        draw_rect(((width // 2 - 57.5), (height // 2 - 225), rect_width, 50), 'Grey')
         write_text('You lost!', (width // 2, height // 2 - 200), 'black', text_font=option_font)
         rect = draw_rect((width // 2 - 50, height // 2, rect_width, rect_height))
         write_text('Restart', (width // 2 + 10, height // 2 + 25), 'black', text_font=option_font)
