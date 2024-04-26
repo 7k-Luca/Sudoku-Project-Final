@@ -34,17 +34,15 @@ if __name__ == '__main__':
     random.seed(random.randint(0, 100000000))
 
 
-    def draw_rect(pos, color='Grey', width=0):
-        pygame.draw.rect(screen, color, pos, width)
-
-        return pygame.Rect(pos)
-
-
     def write_text(text, pos, color='Grey', text_font=text_f):
         text_surf = text_font.render(text, 0, color)
         text_rect = text_surf.get_rect(center=pos)
         screen.blit(text_surf, text_rect)
 
+    def draw_rect(pos, color='Grey', width=0):
+        pygame.draw.rect(screen, color, pos, width)
+
+        return pygame.Rect(pos)
 
     def draw_starting_screen():
         icon = pygame.image.load('image.png').convert()
@@ -61,7 +59,6 @@ if __name__ == '__main__':
         write_text('Hard', (rect_x + 360, rect_y + 75), 'Black', text_font=option_font)
         return rect_easy, rect_medium, rect_hard
 
-
     def draw_ending_screen_win():
         icon = pygame.image.load('image.png').convert()
         screen.blit(icon, (0, 0))
@@ -72,20 +69,18 @@ if __name__ == '__main__':
         return rect
 
 
-    def draw_ending_screen_loose():
+    def draw_ending_screen_win():
         icon = pygame.image.load('image.png').convert()
         screen.blit(icon, (0, 0))
         draw_rect(((width // 2 - 57.5), (height // 2 - 225), rect_width, 50), 'Grey')
-        write_text('You lost!', (width // 2, height // 2 - 200), 'black', text_font=option_font)
+        write_text('You Won!', (width // 2, height // 2 - 200), 'black', text_font=option_font)
         rect = draw_rect((width // 2 - 50, height // 2, rect_width, rect_height))
-        write_text('Restart', (width // 2 + 10, height // 2 + 25), 'black', text_font=option_font)
+        write_text('Exit', (width // 2 + 10, height // 2 + 25), 'black', text_font=option_font)
         return rect
-
 
     def return_to_original(*args):
         for i in args:
             kwargs = original_pos
-
 
     rect_easy, rect_medium, rect_hard = draw_starting_screen()
 
