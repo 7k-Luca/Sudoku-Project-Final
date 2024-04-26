@@ -11,7 +11,7 @@ class Button:
 
     def draw(self, surface):
         action = False
-        # Get mouse postion
+        # Get mouse position
         pos = pg.mouse.get_pos()
 
         # Check mouseover and clicked conditions
