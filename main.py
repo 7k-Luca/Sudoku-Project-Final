@@ -3,6 +3,7 @@ import random
 import sys
 from board import Board
 from cell import Cell
+from sudoku_generator import Sudoku_Generator
 
 
 if __name__ == '__main__':

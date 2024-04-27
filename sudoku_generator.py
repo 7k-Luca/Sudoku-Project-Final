@@ -42,9 +42,7 @@ class Sudoku_Generator:
     def is_valid(self, row, col, num):
         row_start = (row // 3) * 3
         col_start = (col // 3) * 3
-        if self.valid_in_box(row_start, col_start, num) == True and self.valid_in_row(row,
-                                                                                      num) == True and self.valid_in_col(
-            col, num) == True:
+        if self.valid_in_box(row_start, col_start, num) == True and self.valid_in_row(row,num) == True and self.valid_in_col(col, num) == True:
             return True
         else:
             return False
@@ -121,3 +119,4 @@ class Sudoku_Generator:
         self.fill_values()
         ans_board = self.get_board()
         return ans_board
+
